@@ -59,25 +59,24 @@ const ModelViewer = ({ modelUrl, productName, onClose }) => {
                             exposure="1"
                             shadow-intensity="1"
                             environment-image="neutral"
-                        >
-                            {isARSupported && (
-                                <button
-                                    slot="ar-button"
-                                    className="absolute bottom-4 right-4 bg-rose-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-rose-700 transition"
-                                    onClick={handleARClick}
-                                >
-                                    View in AR
-                                </button>
+                        />
+                        <div className="absolute top-4 right-4 z-50">
+                            <button
+                                className="bg-rose-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-rose-700 transition shadow-lg"
+                                onClick={handleARClick}
+                            >
+                                View in AR
+                            </button>
+                        </div>
+
+                        <div className="absolute bottom-16 left-4 text-sm text-gray-600 max-w-xs pointer-events-none">
+                            <p>💡 <strong>Desktop:</strong> Use mouse to rotate, scroll to zoom</p>
+                            {isARSupported ? (
+                                <p>📱 <strong>Mobile:</strong> Tap AR button for augmented reality</p>
+                            ) : (
+                                <p>📱 <strong>Mobile:</strong> AR available on compatible devices</p>
                             )}
-                            <div className="absolute bottom-4 left-4 text-sm text-gray-600 max-w-xs">
-                                <p>💡 <strong>Desktop:</strong> Use mouse to rotate, scroll to zoom</p>
-                                {isARSupported ? (
-                                    <p>📱 <strong>Mobile:</strong> Tap AR button for augmented reality</p>
-                                ) : (
-                                    <p>📱 <strong>Mobile:</strong> AR available on compatible devices</p>
-                                )}
-                            </div>
-                        </model-viewer>
+                        </div>
                     </div>
                 </div>
             </div>
