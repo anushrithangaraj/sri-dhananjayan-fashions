@@ -1,0 +1,139 @@
+/* frontend/src/App.css */
+/* Custom animations and styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom scrollbar for product grids */
+.product-grid::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.product-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb:hover {
+  background: #969696;
+}
+
+/* Image zoom effect */
+.zoom-image {
+  transition: transform 0.3s ease;
+}
+
+.zoom-image:hover {
+  transform: scale(1.1);
+}
+
+/* Custom loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Toast custom styles */
+.toast-success {
+  background-color: #10b981 !important;
+  color: white !important;
+}
+
+.toast-error {
+  background-color: #ef4444 !important;
+  color: white !important;
+}
+
+.toast-info {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+/* Rating stars */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star-rating .star {
+  color: #d1d5db;
+  font-size: 1.25rem;
+}
+
+.star-rating .star.filled {
+  color: #fbbf24;
+}
+
+.star-rating .star.half-filled {
+  color: #fbbf24;
+  position: relative;
+}
+
+/* Product card hover effects */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Quantity selector */
+.quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.quantity-selector button {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity-selector button:hover {
+  background: #f3f4f6;
+}
+
+.quantity-selector button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-selector span {
+  padding: 0.5rem 1rem;
+  min-width: 3rem;
+  text-align: center;
+}
